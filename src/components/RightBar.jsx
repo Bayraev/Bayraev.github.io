@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './RightBar.module.scss';
 import Proposals from './Proposals';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import NewProposal from './NewProposal';
 import NotImplemented from './NotImplemented';
 import MyRequests from './MyRequests';
@@ -19,6 +19,7 @@ const RightBar = () => {
             </div>
           }
         />
+        <Route path="/" element={<Navigate to="/proposals" />} />
         <Route path="/newproposal" element={<NewProposal />} />
         <Route path="/users" element={<NotImplemented />} />
         <Route path="/myrequests" element={<MyRequests />} />
