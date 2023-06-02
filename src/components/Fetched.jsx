@@ -6,7 +6,7 @@ const Fetched = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUsers());
-  }, []);
+  }, [dispatch]);
 
   const fetched = useSelector((state) => state.fetchSlice);
 

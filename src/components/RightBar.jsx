@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './RightBar.module.scss';
-import Complaint from './Complaint';
 import Proposals from './Proposals';
 import { Route, Routes } from 'react-router-dom';
 import NewProposal from './NewProposal';
