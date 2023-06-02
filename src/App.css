@@ -1,0 +1,30 @@
+.app {
+    display: block;
+    justify-content: center;
+
+}
+
+
+
+body {
+    background-color: rgb(44, 44, 44);
+}
+
+.invis_button {
+    cursor: pointer;
+    width: 120px;
+    height: 30px;
+    background-color: rgba(255, 0, 0, 0);
+    border: 1px solid red;
+    color: white;
+    border-radius: 30px;
+}
+.full_button {
+    cursor: pointer;
+    width: 120px;
+    height: 30px;
+    background-color: red;
+    border: 1px solid red;
+    color: white;
+    border-radius: 30px;
+}

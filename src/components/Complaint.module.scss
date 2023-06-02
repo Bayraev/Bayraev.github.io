@@ -1,0 +1,43 @@
+//  its complait component styles:
+.complaint_block {
+    .complaint {
+    
+    width: 97%;
+    min-height: 300px;
+    color: white;
+    .user {
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        min-width: 100px;
+        max-width: 500px;
+        font-size: 20px;
+        padding: 20px;
+        background-color: rgb(69, 69, 69);
+
+    }
+    .block{
+        margin-top: 20px;
+        .info{
+            display: flex;
+            .text {
+                border-radius: 20px;
+                display: flex;
+                justify-content: space-between;
+                min-width: 100px;
+                max-width: 500px;
+                font-size: 20px;
+                padding: 20px;
+                background-color: rgb(69, 69, 69);
+            }
+            .buttons{
+                margin: 0 0 0 0;
+                button{
+                    display: block;
+                    margin: 0 10px 10px 10px ;
+                }
+            }
+        }
+    }
+ }
+ }

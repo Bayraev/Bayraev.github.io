@@ -1,0 +1,23 @@
+.left_bar {
+    width: 25%;
+    height: 100%;
+    background-color: rgb(69, 69, 69);
+    ol {
+        .state {
+             cursor: pointer;
+            margin-bottom: 10px;
+            color: white;
+            border: 0;
+            background: none;
+        }
+        li {
+            list-style-type: none;
+        }
+        .selected {
+            cursor: pointer;
+            list-style-type: square;
+            margin-bottom: 10px;
+            color: white;
+        }
+    }
+}

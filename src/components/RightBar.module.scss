@@ -1,0 +1,42 @@
+.right_bar {
+ height: 100%;
+ width: 100%;
+ margin-left: 20px;
+ color: white;
+ 
+ 
+ // proposals list component
+ .proposals_block {
+     width: 90%;
+     .proposals{
+            color: white;
+            li {
+            position: relative;
+            right: 40px;
+            background-color: rgb(69, 69, 69);
+            display: flex;
+            justify-content: space-between;
+            font-size: large;
+            align-items: center;
+            margin-bottom: 5px;
+            div {
+                font-size: medium;
+                width: 10px;
+                height: 10px;
+                padding: 10px;
+            }
+            .accepted {                
+                background-color: lime;
+            }
+            .waiting {                
+                background-color: yellow;
+            }
+            .declined {                
+                background-color: red;
+            }
+        
+        }
+        
+    }
+ }
+}
