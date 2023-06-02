@@ -6,7 +6,6 @@ import RightBar from '../components/RightBar';
 const MainPage = () => {
   return (
     <div className={styles.wrapper}>
-      {/*  */}
       <LeftBar />
       <RightBar />
     </div>

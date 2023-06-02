@@ -5,21 +5,40 @@ import { deleteUser } from '../app/features/usersReducer';
 
 const Proposals = ({ styles }) => {
   const dispatch = useDispatch();
-  // users array
-  const users = useSelector((state) => state.usersReducer.users);
+  const users = useSelector((state) => state.usersReducer.users); // users from global state
 
-  // checking window tipa
-  const [isOpened, setIsOpened] = useState(false); // answer to proposal window
-  const [checkingData, setCheckingData] = useState(null); //! СОДЕРЖИТ МАССИВ КОТОРЫЙ ЗАЛИВАЕТСЯ В ГЛОБАЛЬНЫЙ СТЕЙТ
-  // handler of "answer to proposal window"
+  const [isOpened, setIsOpened] = useState(false); // window for response (to proposal)
+  const [checkingData, setCheckingData] = useState(null); // it will contain one User, who about to use in 'window for response'
+  const [clickCount, setClickCount] = useState(0); // how times clicked proposal (to check double clicks and single)
+
   const checkingHandler = (user) => {
-    setTimeout(() => {
-      setIsOpened(true);
-      setCheckingData(user);
-    }, 400);
+    setClickCount((prevCount) => prevCount + 1); // catching clicks
+    setCheckingData(user);
   };
+
   useEffect(() => {
-    setIsOpened(false);
+    let timeout;
+
+    if (clickCount === 1) {
+      timeout = setTimeout(() => {
+        setIsOpened(true);
+        setClickCount(0);
+      }, 300); // if in 300 ms we dont click seconnd time
+    } else if (clickCount === 2) {
+      clearTimeout(timeout);
+      dispatch(deleteUser(checkingData.id));
+      setClickCount(0);
+    } // clears and timeout and click count
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [clickCount, checkingData, dispatch]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsOpened(false);
+    }, 100);
   }, [users]);
 
   return (
@@ -31,7 +50,7 @@ const Proposals = ({ styles }) => {
           return (
             <li
               key={user.id}
-              onDoubleClick={() => dispatch(deleteUser(user.id))}
+              onDoubleClick={() => setClickCount(2)}
               onClick={() => checkingHandler(user)}>
               <span>{user.name}</span>
               <div
