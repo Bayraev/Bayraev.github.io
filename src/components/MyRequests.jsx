@@ -14,8 +14,7 @@ const MyRequests = () => {
   }
   return (
     <div>
-      Не забудьте добавить новые предложения в New Proposal, данные не сохранены в localstorage или
-      где-либо еще!
+      Не забудьте добавить новые предложения в New Proposal, данные сохранены в localstorage!
       <ol>
         {myReqs.map((e) => {
           const cuttedMessage = truncateMessage(e.message);
