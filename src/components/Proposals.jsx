@@ -5,7 +5,7 @@ import { deleteUser } from '../app/features/usersReducer';
 
 const Proposals = ({ styles }) => {
   const dispatch = useDispatch();
-  const users = useSelector((state) => state.usersReducer.users); // users from global state
+  const users = useSelector((state) => state.root.usersReducer.users); // users from global state
 
   const [isOpened, setIsOpened] = useState(false); // window for response (to proposal)
   const [checkingData, setCheckingData] = useState(null); // it will contain one User, who about to use in 'window for response'

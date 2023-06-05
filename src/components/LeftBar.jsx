@@ -6,9 +6,9 @@ import { changeProposalsChapterAction } from '../app/features/selectionIdOfPropo
 
 const LeftBar = () => {
   const dispatch = useDispatch();
-  const isAdmin = useSelector((state) => state.userRole.isAdmin);
+  const isAdmin = useSelector((state) => state.root.userRole.isAdmin);
   const selected = useSelector(
-    (state) => state.selectRoleAndFeaturesReducer.changeProposalsChapterAction,
+    (state) => state.root.selectRoleAndFeaturesReducer.changeProposalsChapterAction,
   );
   const admin_list = ['Proposals', 'Users', 'Fetched']; // admin panel
 

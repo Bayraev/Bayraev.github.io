@@ -8,7 +8,7 @@ import { changeProposalsChapterAction } from '../app/features/selectionIdOfPropo
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const isAdmin = useSelector((state) => state.userRole.isAdmin); // true/false
+  const isAdmin = useSelector((state) => state.root.userRole.isAdmin); // true/false
 
   // we need this to change visibility depending on
   // our role

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 const MyRequests = () => {
   //! ЭТО МЕСТЕЧКО ГДЕ ОТОБРАЖАЮТСЯ ТОЛЬКО СВОИ РЕКВЕСТЫ ЮЗЕРА
-  const myReqs = useSelector((state) => state.userRole.myRequests);
+  const myReqs = useSelector((state) => state.root.userRole.myRequests);
   // it cuts text to 50 symbols
   function truncateMessage(message) {
     if (message.length <= 50) {
