@@ -8,7 +8,7 @@ const Fetched = () => {
     dispatch(fetchUsers());
   }, [dispatch]);
 
-  const fetched = useSelector((state) => state.root.fetchSlice);
+  const fetched = useSelector((state) => state.fetchSlice);
 
   //! Тут у нас просто показать что владею санками. Полноценного крада нет, но я умею. Так же на бекенде работал
   return (
